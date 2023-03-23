@@ -14,7 +14,7 @@
         <tds:GetCapabilitiesResponse>
             <tds:Capabilities>
                 <tt:Device>
-                    <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                     <tt:Network>
                         <tt:IPFilter>false</tt:IPFilter>
                         <tt:ZeroConfiguration>true</tt:ZeroConfiguration>
@@ -49,16 +49,16 @@
                     </tt:Security>
                 </tt:Device>
                 <tt:Events>
-                    <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                     <tt:WSSubscriptionPolicySupport>false</tt:WSSubscriptionPolicySupport>
                     <tt:WSPullPointSupport>true</tt:WSPullPointSupport>
                     <tt:WSPausableSubscriptionManagerInterfaceSupport>false</tt:WSPausableSubscriptionManagerInterfaceSupport>
                 </tt:Events>
                 <tt:Imaging>
-                    <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                 </tt:Imaging>
                 <tt:Media>
-                    <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                     <tt:StreamingCapabilities>
                         <tt:RTPMulticast>false</tt:RTPMulticast>
                         <tt:RTP_TCP>true</tt:RTP_TCP>
@@ -66,11 +66,11 @@
                     </tt:StreamingCapabilities>
                 </tt:Media>
                 <tt:PTZ>
-                    <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                 </tt:PTZ>
                 <tt:Extension>
                     <tt:DeviceIO>
-                        <tt:XAddr>http://192.168.68.111/onvif/services</tt:XAddr>
+                        <tt:XAddr>http://192.168.0.137:8080/onvif/services</tt:XAddr>
                         <tt:VideoSources>1</tt:VideoSources>
                         <tt:VideoOutputs>0</tt:VideoOutputs>
                         <tt:AudioSources>1</tt:AudioSources>

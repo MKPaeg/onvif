@@ -7,7 +7,7 @@
         <tds:GetCapabilitiesResponse>
             <tds:Capabilities>
                 <tt:Device>
-                    <tt:XAddr>http://192.168.30.65/onvif/device_service</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.83:554/live4.sdp</tt:XAddr>
                     <tt:Network>
                         <tt:IPFilter>true</tt:IPFilter>
                         <tt:ZeroConfiguration>true</tt:ZeroConfiguration>
@@ -71,7 +71,7 @@
                     </tt:Security>
                 </tt:Device>
                 <tt:Events>
-                    <tt:XAddr>http://192.168.30.65/onvif/event_service</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.137:8080/onvif/event_service</tt:XAddr>
                     <tt:WSSubscriptionPolicySupport>true</tt:WSSubscriptionPolicySupport>
                     <tt:WSPullPointSupport>true</tt:WSPullPointSupport>
                     <tt:WSPausableSubscriptionManagerInterfaceSupport>false</tt:WSPausableSubscriptionManagerInterfaceSupport>
@@ -80,10 +80,10 @@
                     <tt:PersistentNotificationStorage>false</tt:PersistentNotificationStorage>
                 </tt:Events>
                 <tt:Imaging>
-                    <tt:XAddr>http://192.168.30.65/onvif/device_service</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.83:554/live4.sdp</tt:XAddr>
                 </tt:Imaging>
                 <tt:Media>
-                    <tt:XAddr>http://192.168.30.65/onvif/device_service</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.83:554/live4.sdp</tt:XAddr>
                     <tt:StreamingCapabilities>
                         <tt:RTPMulticast>true</tt:RTPMulticast>
                         <tt:RTP_TCP>true</tt:RTP_TCP>
@@ -96,7 +96,7 @@
                     </tt:Extension>
                 </tt:Media>
                 <tt:PTZ>
-                    <tt:XAddr>http://192.168.30.65/onvif/device_service</tt:XAddr>
+                    <tt:XAddr>http://192.168.0.83:554/live4.sdp</tt:XAddr>
                 </tt:PTZ>
                 <tt:Extension>
                     <tt:DeviceIO>

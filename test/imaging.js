@@ -7,8 +7,8 @@ describe('Imaging', () => {
 		const options = {
 			hostname: process.env.HOSTNAME || 'localhost',
 			username: process.env.USERNAME || 'admin',
-			password: process.env.PASSWORD || '9999',
-			port: process.env.PORT ? parseInt(process.env.PORT) : 10101,
+			password: process.env.PASSWORD || 'qwe1010',
+			port: process.env.PORT ? parseInt(process.env.PORT) : 8080,
 		};
 		cam = new onvif.Cam(options, done);
 	});

@@ -6,7 +6,7 @@
                 <wsse:Username>admin</wsse:Username>
                 <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">m9KmXKm11Sr3yst3mL1qgWFnRRI=</wsse:Password>
                 <wsse:Nonce>MzI0NjgxODk4NA==</wsse:Nonce>
-                <wsu:Created>2015-07-01T16:07:13.613Z</wsu:Created>
+                <wsu:Created>2023-03-03T16:07:13.613Z</wsu:Created>
             </wsse:UsernameToken>
         </wsse:Security>
     </SOAP-ENV:Header>
@@ -33,11 +33,11 @@
             </tds:Scopes>
             <tds:Scopes>
                 <tt:ScopeDef>Fixed</tt:ScopeDef>
-                <tt:ScopeItem>onvif://www.onvif.org/hardware/HD_PREDATOR</tt:ScopeItem>
+                <tt:ScopeItem>onvif://www.onvif.org/hardware/</tt:ScopeItem>
             </tds:Scopes>
             <tds:Scopes>
                 <tt:ScopeDef>Configurable</tt:ScopeDef>
-                <tt:ScopeItem>onvif://www.onvif.org/name/PREDATOR</tt:ScopeItem>
+                <tt:ScopeItem>onvif://www.onvif.org/name/HK640SIp</tt:ScopeItem>
             </tds:Scopes>
             <tds:Scopes>
                 <tt:ScopeDef>Configurable</tt:ScopeDef>

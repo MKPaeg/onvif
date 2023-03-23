@@ -5,7 +5,7 @@
          <tds:ZeroConfiguration>
             <tt:InterfaceToken>eth0</tt:InterfaceToken>
             <tt:Enabled>true</tt:Enabled>
-            <tt:Addresses>192.168.1.11</tt:Addresses>
+            <tt:Addresses>192.168.0.137</tt:Addresses>
          </tds:ZeroConfiguration>
       </tds:GetZeroConfigurationResponse>
    </env:Body>

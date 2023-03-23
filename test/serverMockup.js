@@ -5,12 +5,23 @@ const fs = require('fs');
 const Buffer = require('buffer').Buffer;
 // eslint-disable-next-line node/no-unpublished-require
 const template = require('dot').template;
+
+//
+const onvif = require('../lib/onvif.js');
+const options = {
+	hostname: process.env.HOSTNAME || 'localhost',
+	username: process.env.USERNAME || 'admin',
+	password: process.env.PASSWORD || 'qwe1010',
+	port: process.env.PORT ? parseInt(process.env.PORT) : 8080,
+};
+cam = new onvif.Cam(options, () => { console.log('Init onvif camera object.'); });
+
 const reBody = /<s:Body xmlns:xsi="http:\/\/www.w3.org\/2001\/XMLSchema-instance" xmlns:xsd="http:\/\/www.w3.org\/2001\/XMLSchema">(.*)<\/s:Body>/;
 const reCommand = /<(\S*) /;
 const reNS = /xmlns="http:\/\/www.onvif.org\/\S*\/(\S*)\/wsdl"/;
 const __xmldir = __dirname + '/serverMockup/';
 const conf = {
-	port: parseInt(process.env.PORT) || 10101, // server port
+	port: parseInt(process.env.PORT) || 8080, // server port
 	hostname: process.env.HOSTNAME || 'localhost',
 	pullPointUrl: '/onvif/subscription?Idx=6',
 };
@@ -38,6 +49,9 @@ const listener = (req, res) => {
 		if (!command) {
 			return res.end();
 		}
+		//
+		//if (verbose) 
+	    //	console.log('body: ', body);
 		// Look for ONVIF namespaces
 		const onvifNamespaces = reNS.exec(header);
 		let ns = '';
@@ -45,20 +59,40 @@ const listener = (req, res) => {
 			ns = onvifNamespaces[1];
 		}
 		if (verbose) {
+			//console.log('header: ', header);
 			console.log('received', ns, command);
+
 		}
-		if (fs.existsSync(__xmldir + ns + '.' + command + '.xml')) {
-			command = ns + '.' + command;
+		
+		//Parsing and handle it
+		if (command === 'GetSystemDateAndTime') {
+			cam.putSystemDateAndTime((err, dateTime, xml) => { 
+				console.log('GetSystemDateAndTime: ', xml); 
+				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+				res.end(template(xml)(conf));
+			});
 		}
-		if (!fs.existsSync(__xmldir + command + '.xml')) {
-			command = 'Error';
+		//Send default xml
+		else
+		{
+			//Exist
+			if (fs.existsSync(__xmldir + ns + '.' + command + '.xml')) {
+				//
+				command = ns + '.' + command;
+			}
+			//Not exist: error!
+			if (!fs.existsSync(__xmldir + command + '.xml')) {
+				command = 'Error';
+			}
+			//Return response
+			const fileName = __xmldir + command + '.xml';
+			if (verbose) {
+				console.log('serving', fileName);
+				console.log('');
+			}
+			res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+			res.end(template(fs.readFileSync(fileName))(conf));
 		}
-		const fileName = __xmldir + command + '.xml';
-		if (verbose) {
-			console.log('serving', fileName);
-		}
-		res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
-		res.end(template(fs.readFileSync(fileName))(conf));
 	});
 };
 
@@ -68,7 +102,7 @@ const discover = dgram.createSocket({ type: 'udp4', reuseAddr: true });
 discover.on('error', (err) => { throw err; });
 discover.on('message', (msg, rinfo) => {
 	if (verbose) {
-		console.log('Discovery received');
+		//console.log('Discovery received: ', msg, ',', rinfo);
 	}
 	// Extract MessageTo from the XML. xml2ns options remove the namespace tags and ensure element character content is accessed with '_'
 	xml2js.parseString(msg.toString(), { explicitCharkey: true, tagNameProcessors: [xml2js.processors.stripPrefix]}, (err, result) => {
@@ -79,6 +113,9 @@ discover.on('message', (msg, rinfo) => {
 			.replace('RELATES_TO', msgId)
 			.replace('SERVICE_URI', 'http://' + conf.hostname + ':' + conf.port + '/onvif/device_service')
 		);
+		if (verbose) {
+			//console.log('discoverMsg: ', discoverMsg, ',', msgId);
+		}
 		switch (msgId) {
 			// Wrong message test
 			case 'urn:uuid:e7707': discoverReply.send(Buffer.from('lollipop'), 0, 8, rinfo.port, rinfo.address);

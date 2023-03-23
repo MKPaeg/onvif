@@ -2,9 +2,9 @@
  * Created by Andrew D.Laptev<a.d.laptev@gmail.com> on 1/21/15.
  */
 
-var CAMERA_HOST = '192.168.68.111',
-	USERNAME = 'admin',
-	PASSWORD = '9999',
+var CAMERA_HOST = '192.168.0.126',
+	USERNAME = 'root',
+	PASSWORD = 'Nipco@1010',
 	PORT = 80;
 
 var http = require('http'),
@@ -22,6 +22,7 @@ new Cam({
 		return;
 	}
 	console.log('CONNECTED');
+	console.log('Device Info: ' + CAMERA_HOST + ' Port: ' + PORT + ' Username: ' + USERNAME + ' Password: ' + PASSWORD);
 	this.absoluteMove({
 		x: 1
 		, y: 1

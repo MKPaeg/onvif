@@ -8,56 +8,56 @@
             <trt:VideoSources token="VideoSource0">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource1">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource2">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource3">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource4">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource5">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource6">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
             <trt:VideoSources token="VideoSource7">
                 <tt:Framerate>30.0</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>720</tt:Width>
+                    <tt:Width>640</tt:Width>
                     <tt:Height>480</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>

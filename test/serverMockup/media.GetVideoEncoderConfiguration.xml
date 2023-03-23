@@ -22,7 +22,7 @@
                 </tt:Resolution>
                 <tt:Quality>6</tt:Quality>
                 <tt:RateControl>
-                    <tt:FrameRateLimit>5</tt:FrameRateLimit>
+                    <tt:FrameRateLimit>30</tt:FrameRateLimit>
                     <tt:EncodingInterval>1</tt:EncodingInterval>
                     <tt:BitrateLimit>512</tt:BitrateLimit>
                 </tt:RateControl>

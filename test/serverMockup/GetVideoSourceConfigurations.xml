@@ -12,10 +12,10 @@
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <trt:GetVideoSourceConfigurationsResponse>
-            <trt:Configurations token="vscfg0">
-                <tt:Name>vscfg0</tt:Name>
-                <tt:UseCount>3</tt:UseCount>
-                <tt:SourceToken>vidsrc0</tt:SourceToken>
+            <trt:Configurations token="0">
+                <tt:Name>0</tt:Name>
+                <tt:UseCount>4</tt:UseCount>
+                <tt:SourceToken>0</tt:SourceToken>
                 <tt:Bounds height="1080" width="1920" y="0" x="0"></tt:Bounds>
             </trt:Configurations>
         </trt:GetVideoSourceConfigurationsResponse>

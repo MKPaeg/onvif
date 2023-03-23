@@ -16,7 +16,7 @@
                 <tt:FromDHCP>false</tt:FromDHCP>
                 <tt:NTPManual>
                     <tt:Type>IPv4</tt:Type>
-                    <tt:IPv4Address>192.168.1.168</tt:IPv4Address>
+                    <tt:IPv4Address>106.247.248.106</tt:IPv4Address>
                 </tt:NTPManual>
             </tds:NTPInformation>
         </tds:GetNTPResponse>

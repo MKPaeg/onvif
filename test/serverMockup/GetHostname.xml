@@ -13,7 +13,7 @@
         <tds:GetHostnameResponse>
             <tds:HostnameInformation>
                 <tt:FromDHCP>false</tt:FromDHCP>
-                <tt:Name>IPNC-RDK</tt:Name>
+                <tt:Name>VSoC</tt:Name>
             </tds:HostnameInformation>
         </tds:GetHostnameResponse>
     </SOAP-ENV:Body>

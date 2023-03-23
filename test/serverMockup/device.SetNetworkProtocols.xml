@@ -4,19 +4,13 @@
         <wsse:Security>
             <wsse:UsernameToken>
                 <wsse:Username>admin</wsse:Username>
-                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">b645447960c908873b03b7c78c5279be</wsse:Password>
-                <wsse:Nonce>NDczOTcxNjIzNw==</wsse:Nonce>
-                <wsu:Created>2023-03-03T16:29:56.117Z</wsu:Created>
+                <wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordDigest">1M5k9hY0YuiwW8DtkPpJb9WwP8o=</wsse:Password>
+                <wsse:Nonce>MTE1NzM1MTE0OA==</wsse:Nonce>
+                <wsu:Created>2015-07-03T15:03:18.933Z</wsu:Created>
             </wsse:UsernameToken>
         </wsse:Security>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
-        <tds:GetDeviceInformationResponse>
-            <tds:Manufacturer>Ozray Co., Ltd.</tds:Manufacturer>
-            <tds:Model>HK640SIP</tds:Model>
-            <tds:FirmwareVersion>1.2.13</tds:FirmwareVersion>
-            <tds:SerialNumber>00000000</tds:SerialNumber>
-            <tds:HardwareId>HKSeries</tds:HardwareId>
-        </tds:GetDeviceInformationResponse>
+        <tds:SetNetworkProtocolsResponse></tds:SetNetworkProtocolsResponse>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

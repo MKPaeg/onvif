@@ -13,8 +13,8 @@ describe('Common functions', () => {
 		const options = {
 			hostname: process.env.HOSTNAME || 'localhost',
 			username: process.env.USERNAME || 'admin',
-			password: process.env.PASSWORD || '9999',
-			port: process.env.PORT ? parseInt(process.env.PORT) : 10101,
+			password: process.env.PASSWORD || 'qwe1010',
+			port: process.env.PORT ? parseInt(process.env.PORT) : 8080,
 		};
 		cam = new onvif.Cam(options, done);
 	});
@@ -22,7 +22,7 @@ describe('Common functions', () => {
 	describe('default params', () => {
 		it('should set default port and path when no one is specified', (done) => {
 			const defaultCam = new onvif.Cam({});
-			assert.strictEqual(defaultCam.port, 80);
+			assert.strictEqual(defaultCam.port, 8080);
 			assert.strictEqual(defaultCam.path, '/onvif/device_service');
 			done();
 		});

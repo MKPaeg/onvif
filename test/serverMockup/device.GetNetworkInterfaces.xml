@@ -6,7 +6,7 @@
             <tt:Enabled>true</tt:Enabled>
             <tt:Info>
                <tt:Name>eth0</tt:Name>
-               <tt:HwAddress>28:57:be:65:7d:d5</tt:HwAddress>
+               <tt:HwAddress>48:b0:2d:3d:2f:17</tt:HwAddress>
                <tt:MTU>1500</tt:MTU>
             </tt:Info>
             <tt:Link>
@@ -26,7 +26,7 @@
                <tt:Enabled>true</tt:Enabled>
                <tt:Config>
                   <tt:Manual>
-                     <tt:Address>192.168.68.111</tt:Address>
+                     <tt:Address>192.168.0.137</tt:Address>
                      <tt:PrefixLength>24</tt:PrefixLength>
                   </tt:Manual>
                   <tt:DHCP>false</tt:DHCP>
@@ -38,11 +38,11 @@
                   <tt:AcceptRouterAdvert>false</tt:AcceptRouterAdvert>
                   <tt:DHCP>Off</tt:DHCP>
                   <tt:LinkLocal>
-                     <tt:Address>fe80::2a57:beff:fe65:7dd5</tt:Address>
+                     <tt:Address>fe80::b43d:e9c1:62f0:313a</tt:Address>
                      <tt:PrefixLength>64</tt:PrefixLength>
                   </tt:LinkLocal>
                   <tt:FromDHCP>
-                     <tt:Address>fe80::2a57:beff:fe65:7dd5</tt:Address>
+                     <tt:Address>fe80::b43d:e9c1:62f0:313a</tt:Address>
                      <tt:PrefixLength>64</tt:PrefixLength>
                   </tt:FromDHCP>
                </tt:Config>
