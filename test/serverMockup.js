@@ -72,6 +72,20 @@ const listener = (req, res) => {
 				res.end(template(xml)(conf));
 			});
 		}
+		else if (command === 'GetNetworkDefaultGateway') {
+			cam.putEmptyResponse((err, dateTime, xml) => { 
+				console.log('GetNetworkDefaultGateway: ', xml); 
+				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+				res.end(template(xml)(conf));
+			});
+		}
+		else if (command === 'GetDiscoveryMode') {
+			cam.putEmptyResponse((err, dateTime, xml) => { 
+				console.log('GetDiscoveryMode: ', xml); 
+				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+				res.end(template(xml)(conf));
+			});
+		}
 		//Send default xml
 		else
 		{
