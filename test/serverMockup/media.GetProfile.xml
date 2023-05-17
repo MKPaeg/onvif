@@ -2,32 +2,32 @@
     <SOAP-ENV:Header>
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
-	<trt:GetProfilesResponse>
-	 <trt:Profiles fixed="true" token="Profile1">
+	<trt:GetProfileResponse>
+	 <trt:Profile fixed="true" token="main">
 	 <tt:Name>Profile1</tt:Name>
 	 <tt:VideoSourceConfiguration xsi:type="tt:VideoSourceConfiguration" token="video_source_config">
 	 <tt:Name>video_source_config</tt:Name>
 	 <tt:UseCount>1</tt:UseCount>
 	 <tt:SourceToken>video_source</tt:SourceToken>
-	 <tt:Bounds height="1080" width="1920" y="1" x="1">
-	 </tt:Bounds>
+	 <tt:Bounds height="288" width="384" y="1" x="1"></tt:Bounds>
+	 <tt:Extension><tt:Rotate><tt:Mode>ON</tt:Mode><tt:Degree>0</tt:Degree></tt:Rotate></tt:Extension>
 	 </tt:VideoSourceConfiguration>
 	 <tt:VideoEncoderConfiguration xsi:type="tt:VideoEncoderConfiguration" token="video_encoder_config1">
 	 <tt:Name>video_encoder_config1</tt:Name>
 	 <tt:UseCount>1</tt:UseCount>
 	 <tt:Encoding>H264</tt:Encoding>
 	 <tt:Resolution>
-	 <tt:Width>1920</tt:Width>
-	 <tt:Height>1080</tt:Height>
+	 <tt:Width>384</tt:Width>
+	 <tt:Height>288</tt:Height>
 	 </tt:Resolution>
 	 <tt:Quality>7</tt:Quality>
 	 <tt:RateControl>
-	 <tt:FrameRateLimit>30</tt:FrameRateLimit>
-	 <tt:EncodingInterval>0</tt:EncodingInterval>
-	 <tt:BitrateLimit>2048</tt:BitrateLimit>
+	 <tt:FrameRateLimit>9</tt:FrameRateLimit>
+	 <tt:EncodingInterval>1</tt:EncodingInterval>
+	 <tt:BitrateLimit>2000000</tt:BitrateLimit>
 	 </tt:RateControl>
 	 <tt:H264>
-	 <tt:GovLength>30</tt:GovLength>
+	 <tt:GovLength>9</tt:GovLength>
 	 <tt:H264Profile>Baseline</tt:H264Profile>
 	 </tt:H264>
 	 <tt:Multicast>
@@ -35,14 +35,13 @@
 			 <tt:Type>IPv4</tt:Type>
 			 <tt:IPv4Address>0.0.0.0</tt:IPv4Address>
 		 </tt:Address> 
-		 ONVIFTM – 136 – ONVIF APG - Ver. 1.0
 		 <tt:Port>0</tt:Port>
-		 <tt:TTL>3</tt:TTL>
+		 <tt:TTL>5</tt:TTL>
 		 <tt:AutoStart>false</tt:AutoStart>
 	 </tt:Multicast>
 	 <tt:SessionTimeout>PT0S</tt:SessionTimeout>
 	 </tt:VideoEncoderConfiguration>
-	 </trt:Profiles>
-	</trt:GetProfilesResponse>
+	 </trt:Profile>
+	</trt:GetProfileResponse>
     </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>

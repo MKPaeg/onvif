@@ -60,8 +60,8 @@ const listener = (req, res) => {
 		}
 		if (verbose) {
 			//console.log('header: ', header);
-			console.log('received', ns, command);
-
+			if (command != 'Renew' && command != 'Unsubscribe' && command != 'PullMessages')
+				console.log('received: ', ns, command);
 		}
 		
 		//Parsing and handle it
@@ -86,6 +86,14 @@ const listener = (req, res) => {
 				res.end(template(xml)(conf));
 			});
 		}
+		/*else if (command === 'GetStreamUri') {
+			cam.putEmptyResponse((err, dateTime, xml) => { 
+				console.log('GetStreamUri: ', xml); 
+				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+				res.end(template(xml)(conf));
+			});
+		}
+		*/
 		//Send default xml
 		else
 		{
@@ -101,12 +109,21 @@ const listener = (req, res) => {
 			//Return response
 			const fileName = __xmldir + command + '.xml';
 			if (verbose) {
-				console.log('serving', fileName);
-				console.log('');
+				//console.log('serving', fileName);
+				//console.log('');
+				/*
+				if (command == 'media.GetVideoSourceConfiguration')
+					console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
+				if (command == 'events.CreatePullPointSubscription')
+					console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
+				*/
 			}
 			res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
 			res.end(template(fs.readFileSync(fileName))(conf));
 		}
+		//After
+		if (command != 'Renew' && command != 'Unsubscribe' && command != 'PullMessages')
+			console.log('handled: ', ns, command);
 	});
 };
 

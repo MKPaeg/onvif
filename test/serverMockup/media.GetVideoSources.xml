@@ -13,10 +13,10 @@
     <SOAP-ENV:Body>
         <trt:GetVideoSourcesResponse>
             <trt:VideoSources token="vidsrc0">
-                <tt:Framerate>30</tt:Framerate>
+                <tt:Framerate>9</tt:Framerate>
                 <tt:Resolution>
-                    <tt:Width>640</tt:Width>
-                    <tt:Height>480</tt:Height>
+                    <tt:Width>384</tt:Width>
+                    <tt:Height>288</tt:Height>
                 </tt:Resolution>
             </trt:VideoSources>
         </trt:GetVideoSourcesResponse>

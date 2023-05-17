@@ -10,19 +10,19 @@
                     <tt:Name>vscfg0</tt:Name>
                     <tt:UseCount>1</tt:UseCount>
                     <tt:SourceToken>vidsrc0</tt:SourceToken>
-                    <tt:Bounds height="1080" width="1920" y="0" x="0"></tt:Bounds>
+                    <tt:Bounds height="288" width="384" y="0" x="0"></tt:Bounds>
                 </tt:VideoSourceConfiguration>
                 <tt:VideoEncoderConfiguration token="main">
                     <tt:Name>Main stream encoder</tt:Name>
                     <tt:UseCount>1</tt:UseCount>
                     <tt:Encoding>H264</tt:Encoding>
                     <tt:Resolution>
-                        <tt:Width>1920</tt:Width>
-                        <tt:Height>1080</tt:Height>
+                        <tt:Width>384</tt:Width>
+                        <tt:Height>288</tt:Height>
                     </tt:Resolution>
                     <tt:Quality>8</tt:Quality>
                     <tt:RateControl>
-                        <tt:FrameRateLimit>5</tt:FrameRateLimit>
+                        <tt:FrameRateLimit>30</tt:FrameRateLimit>
                         <tt:EncodingInterval>1</tt:EncodingInterval>
                         <tt:BitrateLimit>1000</tt:BitrateLimit>
                     </tt:RateControl>

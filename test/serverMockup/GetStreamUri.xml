@@ -13,7 +13,7 @@
     <SOAP-ENV:Body>
         <trt:GetStreamUriResponse>
             <trt:MediaUri>
-                <tt:Uri>rtsp://192.168.0.83:554/live4.sdp</tt:Uri>
+                <tt:Uri>rtsp://admin:qwe1010@192.168.0.129:554/live4.sdp</tt:Uri>
                 <tt:InvalidAfterConnect>false</tt:InvalidAfterConnect>
                 <tt:InvalidAfterReboot>false</tt:InvalidAfterReboot>
                 <tt:Timeout>PT0S</tt:Timeout>

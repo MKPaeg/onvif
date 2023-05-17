@@ -12,13 +12,13 @@
     </SOAP-ENV:Header>
     <SOAP-ENV:Body>
         <trt:GetVideoEncoderConfigurationResponse>
-            <trt:Configuration token="main">
+            <trt:Configuration token="vscfg0">
                 <tt:Name>Main stream encoder</tt:Name>
                 <tt:UseCount>2</tt:UseCount>
                 <tt:Encoding>H264</tt:Encoding>
                 <tt:Resolution>
-                    <tt:Width>1920</tt:Width>
-                    <tt:Height>1080</tt:Height>
+                    <tt:Width>384</tt:Width>
+                    <tt:Height>288</tt:Height>
                 </tt:Resolution>
                 <tt:Quality>6</tt:Quality>
                 <tt:RateControl>
