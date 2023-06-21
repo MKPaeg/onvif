@@ -14,7 +14,7 @@
                 </tt:VideoSourceConfiguration>
                 <tt:VideoEncoderConfiguration token="main">
                     <tt:Name>Main stream encoder</tt:Name>
-                    <tt:UseCount>1</tt:UseCount>
+                    <tt:UseCount>7</tt:UseCount>
                     <tt:Encoding>H264</tt:Encoding>
                     <tt:Resolution>
                         <tt:Width>384</tt:Width>

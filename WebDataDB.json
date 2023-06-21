@@ -1,0 +1,43 @@
+{
+  "Live": {
+    "Formate": "h264",
+    "FPS": 30,
+    "Bitrate": 50,
+    "Quality": 100,
+    "GOV": 30,
+    "Brightness": 50,
+    "Contrast": 50,
+    "rtsp_url": ""
+  },
+  "PTZ" : {
+    "Fan_Speed": 50,
+    "Tilt_Speed": 50,
+    "Zoom_Speed" : 50,
+    "Focus_Speed" : 50,
+    "Focus_AF_Boolean" : true,
+    "Focus_AF" : 5
+  },
+  "Camera": {
+    "Name": "",
+    "Location": "",
+    "Manufacturer": "",
+    "Model": "",
+    "Hardware_version": "",
+    "Firmware_version": "",
+    "Divice_id": "",
+    "Mac_Address": "",
+    "Onvif_version": ""
+  },
+  "Network": {
+    "IP_Address": "",
+    "Subnet_Mask": "",
+    "Default_Gateway": ""
+  },
+  "User": {
+    "ID": "admin",
+    "Password": "admin"
+  },
+  "System": {
+    "Time_Zone": ""
+  }
+}

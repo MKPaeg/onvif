@@ -24,7 +24,7 @@
                 <tt:RateControl>
                     <tt:FrameRateLimit>30</tt:FrameRateLimit>
                     <tt:EncodingInterval>1</tt:EncodingInterval>
-                    <tt:BitrateLimit>512</tt:BitrateLimit>
+                    <tt:BitrateLimit>2000000</tt:BitrateLimit>
                 </tt:RateControl>
                 <tt:H264>
                     <tt:GovLength>30</tt:GovLength>

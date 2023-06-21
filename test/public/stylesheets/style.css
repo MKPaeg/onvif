@@ -1,0 +1,192 @@
+body {
+  padding: 20px;
+  margin: 0;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+form{
+  margin: 0;
+}
+
+table{
+  text-align: left;
+  border-top: 1px solid gray;
+  padding-top: 5px;
+}
+th{
+  width: 170px;
+}
+td{
+  padding: 0;
+  padding-left: 5px;
+}
+
+.title{
+  font-size: 20px;
+}
+
+.PTZ_Cont_out{
+  width: 1px;
+}
+
+.Live{
+  display: grid;
+  justify-items: start;
+}
+
+.Live_setting{
+  display: flex;
+  align-items: center;
+}
+.Live_setting_input{
+  width: 50px;
+}
+
+.Live_Streaming_title{
+  width: 110px;
+  margin: 5px 0px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+.Live_rtsp{
+  min-width: 30%;
+  padding: 5px;
+  border: 2px solid gray;
+  border-radius: 5px;
+  margin: 5px 0px;
+  background: lightgray;
+}
+
+
+
+.PTZ_control{
+  display: grid;
+  justify-items: start;
+  margin-top: 8px;
+}
+.PTZ_control_title{
+  font-size: 17px;
+}
+
+.black_btn,.red_btn{
+  color: black;
+  padding: 7px;
+  border: 3px solid black;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.2s;
+  cursor: pointer;
+
+  margin: 5px;
+}
+.red_btn{
+   color: red;
+  border: 3px solid red;
+ }
+
+.black_btn:hover{
+  box-shadow: 1px 1px 5px black;
+}
+.red_btn:hover{
+  box-shadow: 1px 1px 5px #990000;
+}
+
+.PTZ_controll_img, .PTZ_controll_img_red{
+  z-index: 2;
+  height: 32px;
+  margin: 5px;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.PTZ_controll_img:hover{
+  /*filter: invert(43%) sepia(98%) saturate(2340%) hue-rotate(164deg) brightness(99%) contrast(101%);*/
+  /*filter: invert(82%) sepia(12%) saturate(2347%) hue-rotate(89deg) brightness(97%) contrast(91%);*/
+  filter: invert(38%) sepia(96%) saturate(1166%) hue-rotate(97deg) brightness(95%) contrast(98%);
+}
+
+.PTZ_controll_img_red:hover{
+  /*filter: invert(15%) sepia(36%) saturate(6652%) hue-rotate(350deg) brightness(84%) contrast(119%);*/
+  filter: invert(15%) sepia(99%) saturate(6415%) hue-rotate(7deg) brightness(109%) contrast(115%);
+}
+
+.PTZ_control_title{
+  width: 110px;
+  margin: 5px 0px;
+  font-size: 16px;
+  font-weight: bolder;
+}
+
+
+.System_Info{
+  margin-top: 8px;
+}
+
+.System_div{
+  margin-top: 10px;
+}
+
+
+
+/*스위치*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: 0.2s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
