@@ -37,94 +37,92 @@ function header(){
 	return `<head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-        <meta name="keywords" content="test, homepage">
-        <meta name="description" content="s.h testhomepage">
         <meta name="author" content="s.h">
-<!--        <meta http-equiv="Pragma" content="no-cache">-->
-<!--        <meta http-equiv="Cache-Control" content="no-cache">-->
         <title>${title}</title>
 		<!--<link rel="icon" type="image/x-icon" herf="">-->
-        <link rel='stylesheet' href='style.css' />
+        <link rel='stylesheet' href='style.css'/>
     </head>`;
 }
 function live(){
-	return `<div class="Live" xmlns="http://www.w3.org/1999/html">
-				<span class="title">Live</span>
-				<div class="Live_video" style="width: 100%; height: 60vh; border: 1px solid gray; margin: 2px">
-					<img src="${Load_Json.Live.rtsp_url}" >
-				</div>
+	return `
+		<div class="Live" xmlns="http://www.w3.org/1999/html">
+			<span class="title">Live</span>
+			<div id="Live_video" class="Live_video" style="height: ${video_height}; width: ${video_widht};">
+				<iframe name='rtsp_video' class="rtsp_video" src="/images/live_video.png" scrolling="no"></iframe>
+			</div>
+		</div>
+		<script>
+			setInterval('rtsp_video.location.reload();',2000);
+		</script>
+ 
+		<form class="Live_Image_setting">
+			<div class="Live_Streaming">
+
+			<div class="Live_setting">
+				<table class="" style="border: 0">
+					<tbody class="">
+						<tr>
+							<th>압축 형식</th>
+							<td colspan="3">
+								<select class="" name="Live_Quality">
+									<option value="h264">h264</option>
+									<option value="h265">h265</option>
+									<option value="mejpeg">mejpeg</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<th>해상도</th>
+							<td colspan="3">
+								<select class="" name="Live_Quality">
+									<option value="1">h264 640x480</option>
+									<option value="2">h264 384x288</option>
+								</select>
+							</td>
+						</tr>
+
+						<tr>
+							<th>FPS <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.FPS}"></td>
+						</tr>
+
+						<tr>
+							<th>Bitrate <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Bitrate}"></td>
+						</tr>
+
+						<tr>
+							<th>Quality <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Quality}"></td>
+						</tr>
+
+						<tr>
+							<th>GOV <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.GOV}"></td>
+						</tr>
+						<tr>
+							<th>Brightness <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick="" alt=""></td>
+							<td><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Brightness}"></td>
+							<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick="" alt=""></td>
+						</tr>
+						<tr>
+							<th>Contrast <span style="font-size: 8px">(0 ~ 100)</span></th>
+							<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick="" alt=""></td>
+							<td><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Contrast}"></td>
+							<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick="" alt=""></td>
+						</tr>
+					</tbody>
+				</table>
 			</div>
 
-			<form class="Live_Image_setting">
-				<div class="Live_Streaming">
+			<button onclick="alert('적용 되었습니다')">적용</button>
+		</form>
+		<br />
 
 
-
-				<div class="Live_setting">
-					<table class="" style="border: 0">
-						<tbody class="">
-							<tr>
-								<th>압축 형식</th>
-								<td colspan="3">
-									<select class="" name="Live_Quality">
-										<option value="h264">h264</option>
-										<option value="h265">h265</option>
-										<option value="mejpeg">mejpeg</option>
-									</select>
-								</td>
-							</tr>
-
-							<tr>
-								<th>해상도</th>
-								<td colspan="3">
-									<select class="" name="Live_Quality">
-										<option value="1">h264 640x480</option>
-										<option value="2">h264 384x288</option>
-									</select>
-								</td>
-							</tr>
-
-							<tr>
-								<th>FPS <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.FPS}"></td>
-							</tr>
-
-							<tr>
-								<th>Bitrate <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Bitrate}"></td>
-							</tr>
-
-							<tr>
-								<th>Quality <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Quality}"></td>
-							</tr>
-
-							<tr>
-								<th>GOV <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td colspan="3"><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.GOV}"></td>
-							</tr>
-							<tr>
-								<th>Brightness <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick=""></td>
-								<td><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Brightness}"></td>
-								<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick=""></td>
-							</tr>
-							<tr>
-								<th>Contrast <span style="font-size: 8px">(0 ~ 100)</span></th>
-								<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick=""></td>
-								<td><input class="Live_setting_input" type="number" min="0" max="100" value="${Load_Json.Live.Contrast}"></td>
-								<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick=""></td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-
-				<button onclick="alert('적용 되었습니다')">적용</button>
-			</form>
-			<br />
-
-
-			<div class="Live_rtsp">${Load_Json.Live.rtsp_url}</div>`;
+		<div class="Live_rtsp">${Load_Json.Live.rtsp_url}</div>`;
 }
 function PTZ(){
 	return `
@@ -140,32 +138,32 @@ function PTZ(){
 					<tr>
 						<td>&nbsp</td>
 						<td>&nbsp</td>
-						<td><img class="PTZ_controll_img" src="/images/arrow_up.png"></td>
+						<td><img class="PTZ_controll_img" src="/images/arrow_up.png" alt=""></td>
 					</tr>
 					<tr>
 						<td>&nbsp</td>
-						<td><img class="PTZ_controll_img" src="/images/arrow_left.png"></td>
-						<td><img class="PTZ_controll_img_red" src="/images/dot2.png"></td>
-						<td><img class="PTZ_controll_img" src="/images/arrow_right.png"></td>
+						<td><img class="PTZ_controll_img" src="/images/arrow_left.png" alt=""></td>
+						<td><img class="PTZ_controll_img_red" src="/images/dot2.png" alt=""></td>
+						<td><img class="PTZ_controll_img" src="/images/arrow_right.png" alt=""></td>
 					</tr>
 					<tr>
 						<td>&nbsp</td>
 						<td>&nbsp</td>
-						<td><img class="PTZ_controll_img" src="/images/arrow_down.png"></td>
+						<td><img class="PTZ_controll_img" src="/images/arrow_down.png" alt=""></td>
 					</tr>
 					<tr>
 						<th colspan="10">Zoom Speed</th>
-						<td class="Focus_speed_Near"><img class="PTZ_controll_img Wide_btn" src="/images/plus.png"></td>
+						<td class="Focus_speed_Near"><img class="PTZ_controll_img Wide_btn" src="/images/plus.png" alt=""></td>
 						<td><input class="Live_setting_input" value="${Load_Json.PTZ.Zoom_Speed}"></td>
-						<td class="Focus_speed_Far"><img class="PTZ_controll_img Tele_btn" src="images/min.png"></td>
+						<td class="Focus_speed_Far"><img class="PTZ_controll_img Tele_btn" src="images/min.png" alt=""></td>
 					</tr>
 
 
 					<tr>
 						<th colspan="10">Focus Speed</th>
-						<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick="add()"></td>
+						<td class="Focus_speed_Near"><img class="PTZ_controll_img Near_btn" src="images/plus.png" onclick="" alt=""></td>
 						<td><input class="Live_setting_input" value="${Load_Json.PTZ.Zoom_Speed}"></td>
-						<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick="subtract()"></td>
+						<td class="Focus_speed_Far"><img class="PTZ_controll_img Far_btn" src="images/min.png" onclick="" alt=""></td>
 					</tr>
 
 					<tr>
@@ -355,6 +353,7 @@ function system() {
 }
 //html end
 
+//img routing
 function public_files(req,res){
 	if (req.url === '/style.css') {
 		res.writeHead(200,{'Content-Type': 'text/css;'});
@@ -405,13 +404,31 @@ function public_files(req,res){
 
 		return res.end();
 	}
+	if (req.url === '/images/ptz.png') {
+		res.writeHead(200,{'Content-Type': 'image/png;'});
+		res.write(fs.readFileSync('./test/public/images/ptz.png'));
+
+		return res.end();
+	}
+	if (req.url === '/images/live_video2.png') {
+		res.writeHead(200,{'Content-Type': 'image/png;'});
+		res.write(fs.readFileSync('./test/public/images/ptz.png'));
+
+		return res.end();
+	}
+
+	if (req.url === '/images/live_video.png') {
+		res.writeHead(200,{'Content-Type': 'image/png;'});
+		res.write(fs.readFileSync('./test/public/images/live_video.png'));
+		return res.end();
+	}
 }
 
 const listener = (req, res) => {
 	title = 'set_title';
 	//set json
 	Load_Json.Live.rtsp_url = 'rtsp://192.168.0.129:554/live4.sdp';
-	Load_Json.Camera= {
+	Load_Json.Camera = {
 		"Name": "HK380",
 		"Location": "Korea",
 		"Manufacturer": "OZRAY",
@@ -427,6 +444,8 @@ const listener = (req, res) => {
 		"Subnet_Mask": "255.255.255.0",
 		"Default_Gateway": "192.168.0.1"
 	};
+	video_height=320;
+	video_widht=320;
 
 	public_files(req, res);
 
@@ -446,6 +465,7 @@ const listener = (req, res) => {
 	req.on('data', (chunk) => buf.push(chunk));
 	req.on('end', () => {
 		let request;
+
 		if (Buffer.isBuffer(buf)) {
 			request = Buffer.concat(buf);
 		} else {
@@ -462,8 +482,9 @@ const listener = (req, res) => {
 			return res.end();
 		}
 		//
-		//if (verbose) 
-	    //	console.log('body: ', body);
+		//if (verbose)
+		// eslint-disable-next-line no-mixed-spaces-and-tabs
+	    // 	console.log('body: ', body);
 		// Look for ONVIF namespaces
 		const onvifNamespaces = reNS.exec(header);
 		let ns = '';
@@ -472,70 +493,68 @@ const listener = (req, res) => {
 		}
 		if (verbose) {
 			//console.log('header: ', header);
-			if (command != 'Renew' && command != 'Unsubscribe' && command != 'PullMessages')
-				console.log('received: ', ns, command);
+			if (command !== 'Renew' && command !== 'Unsubscribe' && command !== 'PullMessages') {console.log('received: ', ns, command, req.url);}
 		}
 		
 		//Parsing and handle it
 		if (command === 'GetSystemDateAndTime') {
 			cam.putSystemDateAndTime((err, dateTime, xml) => { 
-				console.log('GetSystemDateAndTime: ', xml); 
+				console.log('GetSystemDateAndTime: ', xml);
 				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
 				res.end(template(xml)(conf));
 			});
-		}
-		else if (command === 'GetNetworkDefaultGateway') {
+		} else if (command === 'GetNetworkDefaultGateway') {
 			cam.putEmptyResponse((err, dateTime, xml) => { 
 				console.log('GetNetworkDefaultGateway: ', xml); 
 				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
 				res.end(template(xml)(conf));
 			});
-		}
-		else if (command === 'GetDiscoveryMode') {
+		} else if (command === 'GetDiscoveryMode') {
 			cam.putEmptyResponse((err, dateTime, xml) => { 
 				console.log('GetDiscoveryMode: ', xml); 
 				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
 				res.end(template(xml)(conf));
 			});
 		}
-		/*else if (command === 'GetStreamUri') {
-			cam.putEmptyResponse((err, dateTime, xml) => { 
-				console.log('GetStreamUri: ', xml); 
-				res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
-				res.end(template(xml)(conf));
-			});
-		}
-		*/
+
+		// else if (command === 'GetStreamUri') {
+		// 	cam.putEmptyResponse((err, dateTime, xml) => {
+		// 		console.log('GetStreamUri: ', xml);
+		// 		res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
+		// 		res.end(template(xml)(conf));
+		// 	});
+		// }
+
 		//Send default xml
-		else
-		{
+		else {
 			//Exist
 			if (fs.existsSync(__xmldir + ns + '.' + command + '.xml')) {
 				//
 				command = ns + '.' + command;
 			}
-			//Not exist: error!
 			if (!fs.existsSync(__xmldir + command + '.xml')) {
 				command = 'Error';
 			}
 			//Return response
-			const fileName = __xmldir + command + '.xml';
-			if (verbose) {
-				//console.log('serving', fileName);
-				//console.log('');
-				/*
-				if (command == 'media.GetVideoSourceConfiguration')
-					console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
-				if (command == 'events.CreatePullPointSubscription')
-					console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
-				*/
-			}
+			let fileName = __xmldir + command + '.xml';
+
 			res.setHeader('Content-Type', 'application/soap+xml;charset=UTF-8');
 			res.end(template(fs.readFileSync(fileName))(conf));
+
+			// if (verbose) {
+			// 	console.log('serving', fileName);
+			// 	console.log('');
+			//
+			// 	if (command == 'media.GetVideoSourceConfiguration'){
+			// 		console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
+			// 	}
+			// 	if (command == 'events.CreatePullPointSubscription') {
+			// 		console.log(fs.readFileSync(fileName, {encoding:'utf8', flag:'r'}));
+			// 	}
+			// }
 		}
 		//After
-		if (command != 'Renew' && command != 'Unsubscribe' && command != 'PullMessages')
-			console.log('handled: ', ns, command);
+		if (command !== 'Renew' && command !== 'Unsubscribe' && command !== 'PullMessages') {console.log('handled: ', ns, command, req.url );}
 	});
 };
 
@@ -544,9 +563,9 @@ const discoverReply = dgram.createSocket('udp4');
 const discover = dgram.createSocket({ type: 'udp4', reuseAddr: true });
 discover.on('error', (err) => { throw err; });
 discover.on('message', (msg, rinfo) => {
-	if (verbose) {
-		//console.log('Discovery received: ', msg, ',', rinfo);
-	}
+	// if (verbose) {
+	// 	console.log('Discovery received: ', msg, ',', rinfo);
+	// }
 	// Extract MessageTo from the XML. xml2ns options remove the namespace tags and ensure element character content is accessed with '_'
 	xml2js.parseString(msg.toString(), { explicitCharkey: true, tagNameProcessors: [xml2js.processors.stripPrefix]}, (err, result) => {
 		const msgId = result.Envelope.Header[0].MessageID[0]._;
@@ -556,9 +575,11 @@ discover.on('message', (msg, rinfo) => {
 			.replace('RELATES_TO', msgId)
 			.replace('SERVICE_URI', 'http://' + conf.hostname + ':' + conf.port + '/onvif/device_service')
 		);
-		if (verbose) {
-			//console.log('discoverMsg: ', discoverMsg, ',', msgId);
-		}
+
+		// if (verbose) {
+		// 	console.log('discoverMsg: ', discoverMsg, ',', msgId);
+		// }
+
 		switch (msgId) {
 			// Wrong message test
 			case 'urn:uuid:e7707': discoverReply.send(Buffer.from('lollipop'), 0, 8, rinfo.port, rinfo.address);
@@ -576,6 +597,7 @@ discover.on('message', (msg, rinfo) => {
 if (verbose) {
 	console.log('Listening for Discovery Messages on Port 3702');
 }
+
 discover.bind(3702, () => discover.addMembership('239.255.255.250'));
 
 const server = http.createServer(listener).listen(conf.port, (err) => {

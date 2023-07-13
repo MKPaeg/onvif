@@ -10,7 +10,8 @@ process.env['HOSTNAME'] = serverHostname;
 process.env['PORT'] = serverPort;
 process.env['VERBOSE'] = 'false';
 
-console.log('Starting Server Mockup at http://' + serverHostname + ':' + serverPort + '/onvif/device_service');
+// console.log('Starting Server Mockup at http://' + serverHostname + ':' + serverPort + '/onvif/device_service');
+console.log('Starting Server Mockup at http://' + serverHostname + ':' + serverPort);
 
 let serverMockup = require('./test/serverMockup.js')
 
