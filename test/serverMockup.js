@@ -25,7 +25,6 @@ const conf = {
 	hostname: process.env.HOSTNAME || 'localhost',
 	pullPointUrl: '/onvif/subscription?Idx=6',
 };
-
 const verbose = process.env.VERBOSE || false;
 
 //
